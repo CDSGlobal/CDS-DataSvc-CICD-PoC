@@ -32,10 +32,10 @@ phases:
 
     commands:
 
-      - 'curl -X POST --data-urlencode "payload={\"channel\": \"#moralespocs\",
+      - 'curl -X POST --data-urlencode "payload={\"channel\": \"#flyway_poc\",
 
         \"username\": \"webhookbot\", \"text\": \"Esto se publica en
 
-        #moralespocs Hi Ravi \"}"
+        #flyway_poc Hi Ravi \"}"
 
-        "https://hooks.slack.com/services/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"'
+        "https://hooks.slack.com/services/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"'

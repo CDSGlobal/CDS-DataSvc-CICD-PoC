@@ -28,14 +28,14 @@ phases:
       - flyway -outOfOrder=true -user=$USER -password=$PASSWORD -url=jdbc:postgresql://$ENDPOINT:$PORT/$DATABASE_NAME repair
       - flyway -outOfOrder=true -user=$USER -password=$PASSWORD -url=jdbc:postgresql://$ENDPOINT:$PORT/$DATABASE_NAME migrate
 
-##  build:
+  build:
 
-   ## commands:
+    commands:
 
-      #- 'curl -X POST --data-urlencode "payload={\"channel\": \"#flyway_poc\",
+      - 'curl -X POST --data-urlencode "payload={\"channel\": \"#flyway_pocnew\",
 
-      #  \"username\": \"webhookbot\", \"text\": \"Esto se publica en
+        \"username\": \"webhookbot\", \"text\": \"Esto se publica en
 
-      #  #flyway_poc Hi Ravi \"}"
+        #flyway_pocnew Hi Ravi \"}"
 
-      #  "https://hooks.slack.com/services/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"'
+        "https://hooks.slack.com/services/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"'

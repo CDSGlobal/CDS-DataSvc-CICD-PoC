@@ -1,0 +1,41 @@
+version: 0.2
+
+env:
+
+  secrets-manager:
+
+    USER: "arn:aws:secretsmanager:us-east-1:393563614232:secret:ods_qa_cds_shop_masteruser-Fnx1oh:username"
+
+    PASSWORD: "arn:aws:secretsmanager:us-east-1:393563614232:secret:ods_qa_cds_shop_masteruser-Fnx1oh:password"
+
+    ENDPOINT: "arn:aws:secretsmanager:us-east-1:393563614232:secret:ods_qa_cds_shop_masteruser-Fnx1oh:host"
+
+    PORT: "arn:aws:secretsmanager:us-east-1:393563614232:secret:ods_qa_cds_shop_masteruser-Fnx1oh:port"
+
+    DATABASE_NAME: "arn:aws:secretsmanager:us-east-1:393563614232:secret:ods_qa_cds_shop_masteruser-Fnx1oh:database"
+
+phases:
+
+  install:
+
+    commands:
+
+      - wget -qO- https://download.red-gate.com/maven/release/org/flywaydb/enterprise/flyway-commandline/9.22.0/flyway-commandline-9.22.0-linux-x64.tar.gz | tar -xvz && sudo ln -s `pwd`/flyway-9.22.0/flyway /usr/local/bin
+
+      - . ./script.sh
+
+      - cd flyway-9.21.2
+
+      - flyway -outOfOrder=true -user=$USER -password=$PASSWORD -url=jdbc:postgresql://$ENDPOINT:$PORT/$DATABASE_NAME migrate
+
+  build:
+
+    commands:
+
+      - 'curl -X POST --data-urlencode "payload={\"channel\": \"#moralespocs\",
+
+        \"username\": \"webhookbot\", \"text\": \"Esto se publica en
+
+        #moralespocs Hi Ravi \"}"
+
+        "https://hooks.slack.com/services/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"'

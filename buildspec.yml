@@ -25,7 +25,7 @@ phases:
       - . ./script.sh
 
       - cd flyway-9.21.2
-
+      - flyway -outOfOrder=true -user=$USER -password=$PASSWORD -url=jdbc:postgresql://$ENDPOINT:$PORT/$DATABASE_NAME repair
       - flyway -outOfOrder=true -user=$USER -password=$PASSWORD -url=jdbc:postgresql://$ENDPOINT:$PORT/$DATABASE_NAME migrate
 
   build:

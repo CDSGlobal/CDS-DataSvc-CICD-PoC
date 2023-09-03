@@ -1,0 +1,1 @@
+create table resin_mart.flyway_test4(id INT);

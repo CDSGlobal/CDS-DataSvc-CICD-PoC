@@ -20,7 +20,7 @@ phases:
 
     commands:
 
-      - wget -qO- https://download.red-gate.com/maven/release/org/flywaydb/enterprise/flyway-commandline/9.22.0/flyway-commandline-9.22.0-linux-x64.tar.gz | tar -xvz && sudo ln -s `pwd`/flyway-9.22.0/flyway /usr/local/bin
+      #- wget -qO- https://download.red-gate.com/maven/release/org/flywaydb/enterprise/flyway-commandline/9.22.0/flyway-commandline-9.22.0-linux-x64.tar.gz | tar -xvz && sudo ln -s `pwd`/flyway-9.22.0/flyway /usr/local/bin
 
       - . ./script.sh
 
@@ -28,14 +28,14 @@ phases:
 
       - flyway -outOfOrder=true -user=$USER -password=$PASSWORD -url=jdbc:postgresql://$ENDPOINT:$PORT/$DATABASE_NAME migrate
 
-  build:
+ # build:
 
-    commands:
+   # commands:
 
-      - 'curl -X POST --data-urlencode "payload={\"channel\": \"#flyway_poc\",
+      #- 'curl -X POST --data-urlencode "payload={\"channel\": \"#flyway_poc\",
 
-        \"username\": \"webhookbot\", \"text\": \"Esto se publica en
+     #  \"username\": \"webhookbot\", \"text\": \"Esto se publica en
 
-        #flyway_poc Hi Ravi \"}"
+       # #flyway_poc Hi Ravi \"}"
 
-        "https://hooks.slack.com/services/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"'
+        #"https://hooks.slack.com/services/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"'

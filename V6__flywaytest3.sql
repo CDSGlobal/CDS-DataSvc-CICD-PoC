@@ -1,0 +1,1 @@
+CREATE TABLE RESIN_MART.flywaytest3(id text);
